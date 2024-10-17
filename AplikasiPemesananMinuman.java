@@ -182,8 +182,8 @@ public class AplikasiPemesananMinuman {
             System.out.println("===== Menu =====");
             System.out.println("1. Lihat Menu Minuman");
             System.out.println("2. Lihat Keranjang");
-            System.out.println("3. Pembayaran");
-            System.out.println("4. Hapus pesanan");
+            System.out.println("3. Hapus pesanan");
+            System.out.println("4. Pembayaran");
             System.out.println("5. Lihat Riwayat Pesanan");
             System.out.println("0. LOG OUT");
             System.out.print("Pilih opsi: ");
@@ -200,10 +200,10 @@ public class AplikasiPemesananMinuman {
                     scanner.nextLine();
                     break;
                 case 3:
-                    pembayaran(pelanggan);
+                    hapusPesananDariKeranjang(pelanggan, scanner);
                     break;
                 case 4:
-                    hapusPesananDariKeranjang(pelanggan, scanner);
+                    pembayaran(pelanggan);
                     break;
                 case 5:
                     lihatRiwayatPesanan(pelanggan);
@@ -212,7 +212,7 @@ public class AplikasiPemesananMinuman {
                     break;
                 case 0:
                     System.out.println("Keluar dari akun...");
-                    break;
+                    return;
                 default:
                     System.out.println("Pilihan tidak valid!");
             }
@@ -241,7 +241,7 @@ public class AplikasiPemesananMinuman {
                 } else if (pilihan > 0 && pilihan <= menuMinuman.size()) {
                     Minuman minuman = menuMinuman.get(pilihan - 1);
                     pelanggan.tambahPesanan(minuman);
-                    System.out.println("Pesanan ditambahkan: " + minuman.getNama());
+                     System.out.println("Pesanan ditambahkan: " + minuman.getNama());
                 } else {
                     System.out.println("Pilihan tidak valid!");
                 }
