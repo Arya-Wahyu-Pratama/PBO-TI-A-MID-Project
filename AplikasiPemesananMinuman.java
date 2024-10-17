@@ -344,7 +344,6 @@ public class AplikasiPemesananMinuman {
             System.out.println("Gagal memuat riwayat pesanan.");
         }
     }
-
     public static void main(String[] args) {
         AplikasiPemesananMinuman app = new AplikasiPemesananMinuman();
         app.menuUtama();
